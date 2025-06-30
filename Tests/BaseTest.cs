@@ -17,18 +17,18 @@ namespace TodoMvcSystemTests.Tests
         [SetUp]
         public void Setup()
         {
-            _driver = DriverFactory.CreateDriver(_browserType);
-            _mainPage = new MainPage(_driver);
-            _actionsBuilder = new Actions(_driver);
+            this._driver = DriverFactory.CreateDriver(_browserType);
+            this._mainPage = new MainPage(_driver);
+            this._actionsBuilder = new Actions(_driver);
 
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-            _driver.Navigate().GoToUrl(ConfigManager.BaseUrl);
+            this._driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            this._driver.Navigate().GoToUrl(ConfigManager.BaseUrl);
         }
 
         [TearDown]
         public void TearDown()
         {
-            _driver?.Dispose();
+            this._driver?.Dispose();
         }
     }
 }
